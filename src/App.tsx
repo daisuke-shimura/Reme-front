@@ -2,7 +2,8 @@
 //import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 //import UserSignUpForm from "./components/UserSignUpForm";
-import AdminQuestionIndex from "./components/AdminQuestionIndex";
+import QuestionIndex from "./components/admin/question/Index";
+import QuestionShow from "./components/admin/question/Show";
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 import './App.css'
@@ -13,7 +14,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/admin/questions" element={<AdminQuestionIndex />} />
+        <Route path="/admin/questions" element={<QuestionIndex />} />
+        <Route path="/admin/questions/:id" element={<QuestionShow />} />
       </Routes>
     </BrowserRouter>
   );

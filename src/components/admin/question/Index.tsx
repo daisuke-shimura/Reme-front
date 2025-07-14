@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const AdminQuestionList = () => {
+const QuestionIndex = () => {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:3000/admin/questions")
+    axios.get(`http://127.0.0.1:3000/admin/questions`)
       .then(res => setQuestions(res.data))
       .catch(err => console.error("APIエラー:", err));
   }, []);
@@ -22,4 +22,4 @@ const AdminQuestionList = () => {
   );
 };
 
-export default AdminQuestionList;
+export default QuestionIndex;
