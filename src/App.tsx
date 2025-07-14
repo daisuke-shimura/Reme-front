@@ -1,28 +1,22 @@
-
-import { useState, useEffect } from 'react'
+//import { useState, useEffect } from 'react'
+//import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+//import UserSignUpForm from "./components/UserSignUpForm";
+import AdminQuestionIndex from "./components/AdminQuestionIndex";
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 import './App.css'
-import axios from 'axios'
+//import axios from 'axios'
+
 
 function App() {
-  const [message, setMessage] = useState('')
-
-  useEffect(() => {
-    axios.get('http://localhost:3000/sample')
-      .then(res => {
-        console.log('API成功:', res.data)
-        setMessage(res.data.message) // ← state にセット！
-      })
-      .catch(err => console.error('API失敗:', err))
-  }, [])
-
   return (
-    <div>
-      <p>{message || 'メッセージを取得中...'}</p> {/* ← 表示する */}
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/admin/questions" element={<AdminQuestionIndex />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
 
 export default App
